@@ -22,11 +22,13 @@ const Signup = () => {
     });
   };
 
+  // SERVER_URL "http://localhost:5000/dashboard/signup"
+
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/dashboard/signup",
+       import.meta.env.VITE_SERVER_URL + "/dashboard/signup",
         signupData
       );
       console.log(response.status);

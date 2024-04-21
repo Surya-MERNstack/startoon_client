@@ -9,7 +9,7 @@ const AdminDash = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/dashboard/getUsers");
+        const response = await axios.get(import.meta.env.VITE_SERVER_URL + "/dashboard/getUsers");
         setUserDetails(response.data);
         setTotalUsers(response.data.message.length);
       } catch (error) {

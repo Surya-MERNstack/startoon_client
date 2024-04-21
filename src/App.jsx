@@ -1,13 +1,11 @@
 import React from "react";
-import Signup from "./Signup";
-import Login from "./Login";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import User from "./User";
-import { UserProvider } from "./UserContext";
-import AdminPage from "./AdminPage";
-import AdminDash from "./AdminDash";
-import AdminLogin from "./AdminLogin";
-
+import User from "./user/User";
+import { UserProvider } from "./user/UserContext";
+import AdminDash from "./admin/AdminDash";
+import AdminLogin from "./admin/AdminLogin";
 
 const App = () => {
   return (
@@ -18,13 +16,11 @@ const App = () => {
             <Route path="/" element={<Signup />} />
             <Route path="/user/login" element={<Login />} />
             <Route path="/user" element={<User />} />
-            <Route path="/admin/page" element={<AdminPage />} />
             <Route path="/admin/dash" element={<AdminDash />} />
             <Route path="/admin/login" element={<AdminLogin />} />
           </Routes>
         </BrowserRouter>
       </UserProvider>
-      
     </>
   );
 };

@@ -1,8 +1,7 @@
-
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useUser } from "./UserContext";
+import { useUser } from "../user/UserContext";
 import { toast } from "react-toastify";
 
 const Login = () => {
@@ -18,7 +17,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/dashboard/login",
+        import.meta.env.VITE_SERVER_URL + "/dashboard/login",
         loginData
       );
       console.log(response.data.email);
@@ -96,7 +95,7 @@ const Login = () => {
                 </button>
               </form>
               <p className="mt-2">
-               Create a new Account? <Link to='/'>Signup</Link>
+                Create a new Account? <Link to="/">Signup</Link>
               </p>
             </div>
           </div>

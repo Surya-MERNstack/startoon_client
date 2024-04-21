@@ -23,7 +23,7 @@ const AdminLogin = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/dashboard/admin/login",
+        import.meta.env.VITE_SERVER_URL+"/dashboard/admin/login",
         formData
       );
     
